@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string
+  subtitle: string,
+  description: string
+}
+
+const { title, subtitle, description } = Astro.props
+---
+
+<div>
+  <figure>
+    <img src="" alt="">
+    <figcaption>Consultor de Negócios</figcaption>
+  </figure>
+  
+
+  <div class="bg-zinc-50">
+    <p>{subtitle}</p>
+    <h1>{title}</h1>
+    <span>{description}</span>
+  </div>
+</div>

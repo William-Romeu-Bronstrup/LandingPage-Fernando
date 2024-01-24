@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Sou Fernando Eduardo Schmidt o melhor consultor de negócios da região de Joinville/SC e meu propósito é aumentar e rentabilizar o seu patrimônio. Sendo especialista em consórcio eu posso te auxiliar a realizar o seu sonho, como sua casa própria, viagens, aposentadoria..." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon-ademicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Fernando | Especialista em consórcio</title>
+	</head>
+	<body class="flex justify-between flex-col">
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--background-black: #13151a;
+		--accent: 136, 58, 234;
+	}
+	html {
+		background: var(--background-black);
+	}
+</style>
