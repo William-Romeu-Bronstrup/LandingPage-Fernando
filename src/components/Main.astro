@@ -1,7 +1,17 @@
 ---
-import Apresentation from "./Apresentation.astro";
+import Apresentation from "./main/Apresentation.astro";
+import Details from "./main/Details.astro";
+
+import Products from "./main/Products.astro";
+import AboutMe from "./main/AboutMe.astro";
+import Ademicon from "./main/Ademicon.astro";
 ---
 
-<main class="px-20 max-sm:px-10 mt-20 flex-1 min-h-dvh">
+<main class="px-20 max-sm:px-10 max-lg:px-14 mt-20 flex-1 flex flex-col gap-[6rem] min-h-dvh">
   <Apresentation title="Especialista em consórcio" subtitle="Fernando schmidt" description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus eum quae distinctio reprehenderit, illo mollitia nihil est itaque iure ratione aliquam cum asperiores suscipit qui perspiciatis, maiores ex! Facilis, porro!" />
+
+  <Details />
+  <Products />
+  <AboutMe />
+  <Ademicon />
 </main>

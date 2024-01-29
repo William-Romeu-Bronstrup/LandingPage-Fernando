@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import profileImage  from "../../../public/profile.png";
+import Stars from '../utils/Stars.astro';
+import Social from '../utils/Social.astro';
+
+interface Props {
+  title: string
+  subtitle: string,
+  description: string
+}
+
+const { title, subtitle, description } = Astro.props
+---
+
+
+<section id="apresentation" class="flex items-center justify-around max-lg:mt-8 mt-12 max-xl:flex-row-reverse
+max-lg:flex-col-reverse max-lg:gap-10 max-lg:items-start">
+
+  <div class="w-full hidden max-lg:block">
+    <h3 class="font-Poppins font-bold max-3xl:text-2xl text-[2.5rem] text-white mb-2">Minhas redes</h3>
+    <Social className='flex flex-col max-3xl:gap-2 gap-4 border-2 rounded-md p-2 max-mp:flex-row max-mp:justify-between'
+    showText/>
+  </div>
+
+  <div class="max-lg:flex max-lg:gap-3 max-lg:w-full max-sm:flex-col max-sm:items-center max-sm:gap-6">
+    <figure>
+      <Image title="Fernando schmidt" src={profileImage} alt="Imagem de Fernando schmidt Consultor de Negócios" id="imageProfile" class="max-2xl:w-[360px] max-3xl:w-[480px] w-[600px]" />
+      <figcaption class="text-center text-slate-200 font-light max-3xl:text-base text-[1.8rem]">Consultor de negócios</figcaption>
+    </figure>
+
+    <div class="hidden max-lg:flex grow flex-col justify-evenly font-Poppins max-sm:gap-5">
+      <Stars title="Mais de 300 négocios fechados!" />
+      <Stars title="2M em movimentações!" />
+      <Stars title="Acompanhamento durante o negócio" />
+      <Stars title="Diferencial 1" />
+      <Stars title="Diferencial 2" />
+    </div>
+  </div>
+  
+  <div class="max-w-[70rem] max-3xl:max-w-[50rem] max-2xl:max-w-[40rem] max-lg:max-w-full">
+    <p class="font-Poppins text-[2rem] max-sm:text-[1.5rem] text-gray-500 leading-none font-semibold max-[380px]:leading-7"> {subtitle}</p>
+    <h1 class="font-Poppins max-sm:text-[2.8rem] max-2xl:text-[4rem] text-[5rem] font-bold text-white leading-tight
+    max-[380px]:text-[2.2rem]">{title}</h1>
+
+    <div class="indent-6 font-semibold first-letter:capitalize break-all text-zinc-400 mt-12
+    max-2xl:text-[1rem] text-[1.5rem] max-xl:max-w-[35rem] max-lg:max-w-full">
+      <span>{description}</span>
+    </div>
+    
+  </div>
+</section>

@@ -1,0 +1,77 @@
+---
+import Title from "../Title.astro";
+---
+
+<script type="module">
+  const showText = document.getElementById("showText");
+
+  const text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam harum ex optio veniam assumenda voluptate molestiae consectetur consequuntur tempore temporibus nostrum, reprehenderit exercitationem expedita, corporis impedit unde tenetur? Voluptates, dolores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti aspernatur, voluptatibus, obcaecati sequi fugit odio hic iure delectus necessitatibus voluptatem nam. Asperiores mollitia natus laborum ipsam amet maiores ducimus reiciendis.";
+
+  const readMoreTag = document.createElement("span");
+
+  readMoreTag.addEventListener("click", () => handleReadMore())
+
+  function handleReadMore() {
+    const readMoreTag = document.getElementById("readMore")
+
+    if(readMoreTag.getAttribute("status") == "close") {
+
+      createReadMoreTag(true)
+    } else {
+      createReadMoreTag(false)
+     
+    }
+
+  }
+
+  function createReadMoreTag(isOpen) {
+
+    readMoreTag.style.cursor = "pointer";
+
+    if(isOpen) {
+      showText.innerText = text
+
+      readMoreTag.setAttribute("id", "readMore")
+      readMoreTag.setAttribute("status", "open")
+      readMoreTag.setAttribute("aria-expanded", "true")
+
+      readMoreTag.innerText = "Leia menos"
+
+      readMoreTag.style.color = "gray";
+      readMoreTag.style.textDecoration = "underline"
+
+      showText.append(readMoreTag)
+    } else {
+      showText.innerText = text.slice(0, 220).concat("... ");
+
+      readMoreTag.setAttribute("id", "readMore")
+      readMoreTag.setAttribute("status", "close")
+      readMoreTag.setAttribute("aria-expanded", "false")
+
+      readMoreTag.innerText = "Leia mais"
+
+      readMoreTag.style.color = "gray";
+      readMoreTag.style.textDecoration = "underline"
+
+      showText.append(readMoreTag)
+    }
+
+    
+  }
+
+  createReadMoreTag(false);
+</script>
+
+<section id="ademicon" class="mb-[20rem]">
+  <Title title="Conheça a Ademicon"/>
+
+  <div class="bg-white mt-2 p-2 rounded-md">
+
+    <h3 class="text-red-500 text-center font-bold font-Poppins max-3xl:text-[2rem] text-[2.5rem]">Ademicon</h3>
+    <p class="text-black/80 font-semibold my-4 max-2xl:text-[1rem] text-[1.5rem]" id="showText"></p>
+    
+    <a target="_blank" href="https://ademicon.com.br/" class="flex items-center justify-center gap-2 border-2 border-red-500 rounded-md w-fit text-red-500 font-bold font-Poppins px-3 py-2 hover:bg-red-500 hover:border-red-500 hover:text-white duration-150 tracking-wide max-sm:w-full">
+      Visitar
+    </a>
+  </div>
+</section>

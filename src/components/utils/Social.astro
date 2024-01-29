@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import whatsappSvg from '../../../public/icons/whatsapp.svg';
+import instagramSvg from '../../../public/icons/instagram.svg';
+import gmailSvg from '../../../public/icons/gmail.svg'
+
+interface Props {
+  className: string,
+  showText: boolean
+}
+
+const { className, showText } = Astro.props;
+---
+
+<script type="module">
+  const handleShow = document.querySelectorAll(".handleShow")
+
+  window.addEventListener("resize", () => {
+    if(window.innerWidth <= 380) {
+      handleShow.forEach((hide) => {
+        hide.style.display = "none";
+      })
+    } else {
+      handleShow.forEach((show) => {
+        show.style.display = "block";
+      })
+    }
+  })  
+  
+</script>
+
+<ul class={className}>
+  <li class="hover:bg-green-500 rounded-md p-1 duration-150">
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="flex items-center gap-2 text-slate-200 font-medium max-3xl:text-base text-2xl">
+      <Image src={whatsappSvg} alt="Logo do whatsapp" title='Conversar com Fernando schmidt' />
+      {showText ? <span class="handleShow">+55 55 8431-9556</span> : ''}
+    </a>
+  </li>
+  <li class="hover:bg-gradient-to-r from-purple-500 to-pink-500 rounded-md p-1 duration-150">
+    <a target="_blank" href="https://www.instagram.com/_fernando_schmidt/" class="flex items-center gap-2 text-slate-200 font-medium max-3xl:text-base text-2xl">
+      <Image src={instagramSvg} alt="Logo do instagram" title='Mande um direct!'/>
+      {showText ? <span class="handleShow">_fernando_schmidt</span> : ''}
+    </a>
+  </li>
+  <li class="hover:bg-red-500 rounded-md p-1 duration-150 overflow-hidden">
+    <a target="_blank" href = "mailto:fernandoschmidttt@gmail.com?subject=Vamos fazer negócio?" class="flex items-center gap-2 text-slate-200 font-medium max-3xl:text-base text-2xl ">
+      <Image src={gmailSvg} alt="Logo do gmail" title='Mande um email para mim!'/>
+      {showText ? <p class="handleShow">fernandoschmidttt@gmail.com</p> : ''}
+    </a>
+  </li>
+</ul>

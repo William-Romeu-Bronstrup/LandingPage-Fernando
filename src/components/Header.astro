@@ -7,7 +7,7 @@ let toggleSidebar = false;
 
 window.addEventListener("resize", () => {
   
-  if(window.innerWidth > 636) {
+  if(window.innerWidth >= 636) {
     sidebarTop.style.marginTop = "0px";
     toggleSidebar = false;
   } else {
@@ -30,9 +30,9 @@ toggleArrow.addEventListener("click", () => {
 </script>
 
 <header class="px-20 max-sm:px-10 text-white bg-[#13151a] border-b fixed w-full">
-  <nav>
+  <nav class="max-sm:mb-2">
     <ul class="flex justify-evenly font-Poppins max-sm:flex-col max-sm:gap-4 max-sm:text-center
-    max-sm:mt-[-170px] mt-0 p-4 transition-all max-2xl:text-base max-3xl:text-xl text-2xl" id="sidebarTop">
+    max-sm:mt-[-160px] mt-0 p-4 transition-all max-2xl:text-base max-3xl:text-xl text-2xl" id="sidebarTop">
       <li class="relative">
         <a class="after:content-[''] after:absolute after:bg-red-400 after:h-[3px] after:w-0 after:left-0 after:bottom-0 after:transition-all hover:after:w-full" href="#apresentation">Início</a>
       </li>
@@ -54,15 +54,15 @@ toggleArrow.addEventListener("click", () => {
   hidden
   relative
   max-sm:before:content-['']
-  max-sm:before:w-10
-  max-sm:before:h-10
+  max-sm:before:w-12
+  max-sm:before:h-12
   max-sm:before:rounded-full
   max-sm:before:mb-[-10px]
   max-sm:before:shadow-md
   max-sm:before:bg-zinc-800"
   
   id="arrow">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 absolute top-1 left-46">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 absolute top-2 left-46">
     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
   </svg>
   </div>

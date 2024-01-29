@@ -1,0 +1,19 @@
+---
+import Stars from '../utils/Stars.astro';
+import Social from '../utils/Social.astro';
+---
+
+<section class="max-lg:hidden flex gap-3 max-3xl:justify-between max-xl:px-0 justify-evenly px-20 items-start">
+  <div class="flex flex-col justify-evenly font-Poppins gap-5 ">
+    <Stars title="Mais de 300 négocios fechados!" />
+    <Stars title="2M em movimentações!" />
+    <Stars title="Acompanhamento durante o negócio" />
+    <Stars title="Diferencial 1" />
+    <Stars title="Diferencial 2" />
+  </div>
+
+  <div class="w-1/2 max-xl:w-1/3">
+    <h3 class="font-Poppins font-bold max-3xl:text-2xl text-[2.5rem] text-white mb-2">Minhas redes</h3>
+    <Social className='flex flex-col max-3xl:gap-2 gap-4 border-2 rounded-md p-2' showText/>
+  </div>
+</section>
