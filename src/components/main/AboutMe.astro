@@ -1,7 +1,25 @@
 ---
+import { Image } from 'astro:assets';
+import aboutMePicture  from "../../../public/aboutMePicture.jpg";
 import Title from "../Title.astro";
 ---
 
 <section id="aboutMe">
   <Title title="Sobre mim"/>
+
+  <div class="bg-zinc-900 rounded-md mt-2 p-2 flex max-[910px]:flex-col max-[910px]:justify-center max-[910px]:items-center">
+    <Image title="Fernando schmidt" src={aboutMePicture} alt="Imagem de Fernando schmidt Consultor de Negócios" id="imageProfile"
+    class={`max-2xl:w-[360px] max-2xl:h-[360px] max-3xl:w-[480px] max-3xl:h-[480px] w-[600px] h-[600px]
+    rounded-md aspect-square max-[910px]:object-cover`} />
+
+    <aside>
+      <h3 class="text-center p-2 mb-6 max-[910px]:mb-0 max-[910px]:mt-2 max-[910px]:text-[22px] max-3xl:text-2xl text-[2rem] text-white font-Poppins font-bold">Me conheça um pouco mais</h3>
+
+      <div class="p-4 flex flex-col gap-4 justify-start items-center max-[910px]:text-md max-3xl:text-base text-[1.5rem] font-medium text-white">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo impedit eveniet asperiores, exercitationem dolores aperiam eius nihil perspiciatis quibusdam atque debitis cumque magnam quam temporibus delectus. Ipsa distinctio unde accusamus.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo impedit eveniet asperiores, exercitationem dolores aperiam eius nihil perspiciatis quibusdam atque debitis cumque magnam quam temporibus delectus. Ipsa distinctio unde accusamus.</p>
+      </div>
+    </aside>
+  </div>
 </section>

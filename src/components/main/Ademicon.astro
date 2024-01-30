@@ -33,7 +33,6 @@ import Title from "../Title.astro";
 
       readMoreTag.setAttribute("id", "readMore")
       readMoreTag.setAttribute("status", "open")
-      readMoreTag.setAttribute("aria-expanded", "true")
 
       readMoreTag.innerText = "Leia menos"
 
@@ -46,7 +45,6 @@ import Title from "../Title.astro";
 
       readMoreTag.setAttribute("id", "readMore")
       readMoreTag.setAttribute("status", "close")
-      readMoreTag.setAttribute("aria-expanded", "false")
 
       readMoreTag.innerText = "Leia mais"
 
@@ -62,15 +60,15 @@ import Title from "../Title.astro";
   createReadMoreTag(false);
 </script>
 
-<section id="ademicon" class="mb-[20rem]">
+<section id="ademicon" class="mb-16">
   <Title title="Conheça a Ademicon"/>
 
   <div class="bg-white mt-2 p-2 rounded-md">
 
     <h3 class="text-red-500 text-center font-bold font-Poppins max-3xl:text-[2rem] text-[2.5rem]">Ademicon</h3>
-    <p class="text-black/80 font-semibold my-4 max-2xl:text-[1rem] text-[1.5rem]" id="showText"></p>
+    <p class="text-black font-semibold my-4 max-2xl:text-[1rem] text-[1.5rem]" id="showText"></p>
     
-    <a target="_blank" href="https://ademicon.com.br/" class="flex items-center justify-center gap-2 border-2 border-red-500 rounded-md w-fit text-red-500 font-bold font-Poppins px-3 py-2 hover:bg-red-500 hover:border-red-500 hover:text-white duration-150 tracking-wide max-sm:w-full">
+    <a target="_blank" href="https://ademicon.com.br/" class="flex items-center justify-center gap-2 border-2 border-red-600 rounded-md w-fit text-red-600 font-bold font-Poppins px-3 py-2 hover:bg-red-500 hover:border-red-500 hover:text-white duration-150 tracking-wide max-sm:w-full">
       Visitar
     </a>
   </div>

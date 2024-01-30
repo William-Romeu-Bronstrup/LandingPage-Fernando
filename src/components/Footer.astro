@@ -1,3 +1,18 @@
-<footer  class="px-20 bg-slate-50" id="footer">
-  <p>Ademicon</p>
+---
+import { Image } from 'astro:assets';
+import ademiconLogo  from "../../public/ademicon.svg";
+import Social from './utils/Social.astro';
+import Title from './Title.astro';
+
+---
+
+<footer  class={`px-20 py-4 bg-black/50 flex justify-between max-[800px]:flex-col max-[800px]:flex-col
+max-[800px]:gap-12 max-[800px]:px-10`} id="footer">
+  <Image title="Fernando schmidt" src={ademiconLogo} alt="Imagem de Fernando schmidt Consultor de Negócios" id="imageProfile"
+  class={`max-2xl:w-[280px] max-3xl:w-[360px] w-[480px] max-[800px]:mt-4`} />
+
+  <div>
+    <Title title='Entre em contato comigo!'/>
+    <Social className='flex gap-2 mt-2' showText={false}/>
+  </div>
 </footer>
