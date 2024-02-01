@@ -1,0 +1,18 @@
+---
+
+interface Props {
+  text: string
+}
+
+const { text } = Astro.props
+
+const messageToWhatsapp = `Ol%c3%a1%2c+eu+gostaria+de+saber+mais+sobre+${text}!`;
+
+---
+
+<div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
+  <p class="text-white text-xl font-bold">{text}</p>
+  <a target="_blank" href=`https://api.whatsapp.com/send?phone=555584319556&text=${messageToWhatsapp}` class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
+    Conhecer
+  </a>
+</div>

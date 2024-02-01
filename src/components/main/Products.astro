@@ -2,6 +2,8 @@
 import Title from "../Title.astro";
 import { Image } from 'astro:assets';
 
+import Product from "../utils/Product.astro";
+
 import barco  from "../../../public/products/barco.jpg";
 import casaPropria  from "../../../public/products/casa_propria.jpg";
 import casamento  from "../../../public/products/casamento.jpg";
@@ -19,93 +21,39 @@ import viagem  from "../../../public/products/viagem.jpg";
 
   <div class="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-2 gap-y-8 max-sm:gap-y-4 font-Poppins">
     <div>
-     <div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
-        <p class="text-white text-xl font-bold">Casa própria</p>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
-          Conhecer
-        </a>
-     </div>
-
+      <Product text="Casa própria" />
       <Image src={casaPropria} alt="Consórcio de casa própria" class="rounded-md" />
     </div>
     <div>
-      <div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
-        <p class="text-white text-xl font-bold">Veículo</p>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
-          Conhecer
-        </a>
-       </div>
-
+      <Product text="Veículo" />
       <Image src={veiculo} alt="Consórcio de veículos" class="rounded-md" />
     </div>
     <div>
-      <div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
-        <p class="text-white text-xl font-bold">Viagem</p>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
-          Conhecer
-        </a>
-       </div>
-
+      <Product text="Viagem" />
       <Image src={viagem} alt="Consórcio de viagens" class="rounded-md" />
     </div>
     <div>
-      <div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
-        <p class="text-white text-xl font-bold">Estética</p>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
-          Conhecer
-        </a>
-       </div>
-
+      <Product text="Estética" />
       <Image src={procedimentosEsteticos} alt="Consórcio para procedimentos estéticos" class="rounded-md" />
     </div>
     <div>
-      <div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
-        <p class="text-white text-xl font-bold">Máquinas</p>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
-          Conhecer
-        </a>
-       </div>
-
+      <Product text="Máquinas" />
       <Image src={renovarFrota} alt="Consórcio de máquinas agrícolas" class="rounded-md" />
     </div>
     <div>
-      <div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
-        <p class="text-white text-xl font-bold">Silos e Galpões</p>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
-          Conhecer
-        </a>
-       </div>
-
+      <Product text="Silos e Galpões" />
       <Image src={silosEGalpoes} alt="Consórcio de silos e galpões" class="rounded-md" />
     </div>
     <div>
-      <div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
-        <p class="text-white text-xl font-bold">Terreno</p>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
-          Conhecer
-        </a>
-       </div>
-
+      <Product text="Terreno" />
       <Image src={terreno} alt="Consórcio para terrenos" class="rounded-md" />
     </div>
     <div>
-      <div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
-        <p class="text-white text-xl font-bold">Casamento</p>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
-          Conhecer
-        </a>
-       </div>
-
+      <Product text="Casamento" />
       <Image src={casamento} alt="Consórcio para casamento" class="rounded-md" />
     </div>
     <div>
-      <div class="flex items-center justify-between p-2 max-[2300px]:w-full w-[720px]">
-        <p class="text-white text-xl font-bold">Barco</p>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=555584319556" class="bg-white p-2 rounded-md text-red-500 font-bold hover:scale-105 duration-150">
-          Conhecer
-        </a>
-       </div>
-
+      <Product text="Barco" />
       <Image src={barco} alt="Consórcio para barco" class="rounded-md" />
     </div>
   </div>
