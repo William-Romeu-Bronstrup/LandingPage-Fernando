@@ -5,7 +5,11 @@ import Title from "../Title.astro";
 <script type="module">
   const showText = document.getElementById("showText");
 
-  const text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam harum ex optio veniam assumenda voluptate molestiae consectetur consequuntur tempore temporibus nostrum, reprehenderit exercitationem expedita, corporis impedit unde tenetur? Voluptates, dolores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti aspernatur, voluptatibus, obcaecati sequi fugit odio hic iure delectus necessitatibus voluptatem nam. Asperiores mollitia natus laborum ipsam amet maiores ducimus reiciendis.";
+  const text = `A Ademicon é uma empresa líder no mercado de consórcios, dedicada a capacitar indivíduos a alcançarem seus objetivos financeiros de forma inteligente e acessível. Desde nossa fundação, temos sido pioneiros em oferecer soluções transparentes e inovadoras para milhões de clientes em todo o Brasil.
+
+  Nossa missão é simples: transformar vidas através do acesso justo ao crédito e da realização de sonhos. Com uma equipe dedicada e uma cultura de excelência, estamos comprometidos em oferecer serviços de qualidade, orientação personalizada e suporte contínuo aos nossos clientes.
+
+  Na Ademicon, acreditamos que todos merecem a oportunidade de alcançar seus objetivos financeiros, e estamos aqui para ajudá-lo a tornar seus sonhos uma realidade. Junte-se a nós nesta jornada de realização e transformação. Seu sonho é nossa prioridade.`
 
   const readMoreTag = document.createElement("span");
 
@@ -41,7 +45,7 @@ import Title from "../Title.astro";
 
       showText.append(readMoreTag)
     } else {
-      showText.innerText = text.slice(0, 220).concat("... ");
+      showText.innerText = text.slice(0, 414).concat("... ");
 
       readMoreTag.setAttribute("id", "readMore")
       readMoreTag.setAttribute("status", "close")
@@ -66,7 +70,7 @@ import Title from "../Title.astro";
   <div class="bg-white mt-2 p-2 rounded-md">
 
     <h3 class="text-red-500 text-center font-bold font-Poppins max-3xl:text-[2rem] text-[2.5rem]">Ademicon</h3>
-    <p class="text-black font-semibold my-4 max-2xl:text-[1rem] text-[1.5rem]" id="showText"></p>
+    <p class="text-black font-semibold my-4 max-2xl:text-[1rem] text-[1.5rem] leading-normal" id="showText"></p>
     
     <a target="_blank" href="https://ademicon.com.br/" class="flex items-center justify-center gap-2 border-2 border-red-600 rounded-md w-fit text-red-600 font-bold font-Poppins px-3 py-2 hover:bg-red-500 hover:border-red-500 hover:text-white duration-150 tracking-wide max-sm:w-full">
       Visitar

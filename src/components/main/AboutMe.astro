@@ -4,6 +4,78 @@ import aboutMePicture  from "../../../public/aboutMePicture.jpg";
 import Title from "../Title.astro";
 ---
 
+<script type="module">
+  const showText = document.getElementById("showAboutMe");
+
+  const text = `
+    Olá! Meu nome é Fernando Eduardo Schmidt e estou empolgado para compartilhar um pouco da minha jornada com você. Com apenas 19 anos, estudante de Economia e apaixonado pelo mercado financeiro, eu descobri uma ferramenta incrível que mudou completamente minha vida: os consórcios.
+
+    Tudo começou quando eu tinha 18 anos e decidi comprar meu próprio carro. Como estudante, tinha que equilibrar minhas finanças e encontrar uma maneira inteligente de realizar esse sonho. Foi então que descobri os consórcios. Optei por essa modalidade devido à sua flexibilidade e ausência de juros, o que se alinhava perfeitamente com minha visão financeira.
+
+    Após alguns meses participando ativamente de um consórcio de automóveis, percebi não apenas o potencial dos consórcios como uma ferramenta financeira poderosa, mas também minha paixão por entender o mercado e ajudar outras pessoas a tomar decisões financeiras inteligentes.
+
+    Decidi me aprofundar ainda mais no assunto e, ao longo do tempo, adquiri conhecimento sobre os diferentes tipos de consórcios e suas aplicações em diversos setores. Aos poucos, percebi que queria compartilhar esse conhecimento com outras pessoas e ajudá-las a alcançar seus objetivos financeiros.
+
+    Foi assim que, aos 19 anos, me tornei consultor de consórcios. Com uma combinação de paixão pelo mercado financeiro e experiência pessoal com consórcios, pude oferecer orientação personalizada e ajudar indivíduos e famílias a realizarem seus sonhos de forma inteligente e acessível.
+
+    Mas a história não termina aí. Graças aos consórcios, consegui adquirir meu primeiro imóvel. Investi parte dos meus recursos em um consórcio imobiliário, aproveitando as vantagens oferecidas por essa modalidade para alcançar meu objetivo de maneira planejada e sustentável.
+
+    Hoje, olho para trás e vejo como os consórcios não apenas transformaram minha vida, mas também me permitiram ajudar outras pessoas a alcançarem seus sonhos financeiros. Estou animado para continuar essa jornada, compartilhando meu conhecimento e inspirando outros a conquistarem a liberdade financeira por meio dos consórcios.
+
+    Se você também deseja transformar sua vida financeira e realizar seus sonhos de forma inteligente e acessível, estou aqui para ajudar. Juntos, podemos criar um plano personalizado que o levará mais perto dos seus objetivos. Vamos começar essa jornada juntos!
+  `
+
+  const readMoreTag = document.createElement("span");
+
+  readMoreTag.addEventListener("click", () => handleAboutMe())
+
+  function handleAboutMe() {
+    const readMoreTag = document.getElementById("readMoreAboutMe")
+
+    if(readMoreTag.getAttribute("status") == "close") {
+
+      createReadMoreTag(true)
+    } else {
+      createReadMoreTag(false)
+     
+    }
+
+  }
+
+  function createReadMoreTag(isOpen) {
+
+    readMoreTag.style.cursor = "pointer";
+
+    if(isOpen) {
+      showText.innerText = text
+
+      readMoreTag.setAttribute("id", "readMoreAboutMe")
+      readMoreTag.setAttribute("status", "open")
+
+      readMoreTag.innerText = "Leia menos"
+
+      readMoreTag.style.color = "gray";
+      readMoreTag.style.textDecoration = "underline"
+
+      showText.append(readMoreTag)
+    } else {
+      showText.innerText = text.slice(0, 710).concat("... ");
+
+      readMoreTag.setAttribute("id", "readMoreAboutMe")
+      readMoreTag.setAttribute("status", "close")
+
+      readMoreTag.innerText = "Leia mais"
+
+      readMoreTag.style.color = "gray";
+      readMoreTag.style.textDecoration = "underline"
+
+      showText.append(readMoreTag)
+    }
+  }
+
+  createReadMoreTag(false);
+</script>
+
 <section id="aboutMe">
   <Title title="Sobre mim"/>
 
@@ -13,12 +85,10 @@ import Title from "../Title.astro";
     rounded-md aspect-square max-[910px]:object-cover`} />
 
     <aside>
-      <h3 class="text-center p-2 mb-6 max-[910px]:mb-0 max-[910px]:mt-2 max-[910px]:text-[22px] max-3xl:text-2xl text-[2rem] text-white font-Poppins font-bold">Me conheça um pouco mais</h3>
+      <h3 class="text-center pt-2 max-[910px]:mb-0 max-[910px]:mt-2 max-[910px]:text-[22px] max-3xl:text-2xl text-[2rem] text-white font-Poppins font-bold">Me conheça um pouco mais</h3>
 
-      <div class="p-4 flex flex-col gap-4 justify-start items-center max-[910px]:text-md max-3xl:text-base text-[1.5rem] font-medium text-white">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo impedit eveniet asperiores, exercitationem dolores aperiam eius nihil perspiciatis quibusdam atque debitis cumque magnam quam temporibus delectus. Ipsa distinctio unde accusamus.</p>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo impedit eveniet asperiores, exercitationem dolores aperiam eius nihil perspiciatis quibusdam atque debitis cumque magnam quam temporibus delectus. Ipsa distinctio unde accusamus.</p>
+      <div class="p-4 flex flex-col justify-start items-center max-[910px]:text-md max-3xl:text-base text-[1.5rem] font-medium text-white">
+        <p id="showAboutMe" class="max-2xl:text-[1rem] text-[1.5rem] leading-normal"></p>
       </div>
     </aside>
   </div>
